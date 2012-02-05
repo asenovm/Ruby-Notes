@@ -12,7 +12,6 @@ class ConsoleExport
     res
   end
 
-  private
   def self.export_note(note)
     result = center_in_container(ID_FIELD_LENGTH,  note.id)
     result += center_in_container(TAG_FIELD_LENGTH, note.get_tags_as_string)

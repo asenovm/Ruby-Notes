@@ -28,7 +28,6 @@ class HtmlExport
     res
   end
 
-  private
   def self.attach_headers(html_body)
     res = DOCTYPE  + HTML + HEAD + ENCODING
     res += TITLE + get_closing_tag(HEAD) 
