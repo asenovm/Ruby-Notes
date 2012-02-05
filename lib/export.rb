@@ -1,4 +1,3 @@
-require './note'
 class HtmlExport 
   DOCTYPE = '<!DOCTYPE html>'
   HTML = '<html>'
