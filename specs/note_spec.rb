@@ -11,7 +11,7 @@ describe @note do
 
   describe'tags work properly' do
     it 'can have a tag' do
-        @note.add_tag('todo')
+      @note.add_tag('todo')
     end
     
     it 'cannot have one tag multiple times' do
@@ -51,16 +51,16 @@ describe @note do
     end
 
     it 'can have description overriden' do
-       @note.description = 'foobar'
-       @note.description = 'new description'
-       @note.description.should eq 'new description'
+      @note.description = 'foobar'
+      @note.description = 'new description'
+      @note.description.should eq 'new description'
     end
   end
 
   describe 'to string output' do
     it 'can have tags exported to string' do
-        @note.add_tag 'to do'
-        @note.get_tags_as_string.should eq 'to do'
+      @note.add_tag 'to do'
+      @note.get_tags_as_string.should eq 'to do'
     end
 
     it 'can have multiple tags exported as string correctly' do
