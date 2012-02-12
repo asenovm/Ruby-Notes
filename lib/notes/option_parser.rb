@@ -1,7 +1,6 @@
 class OptionParser
   def initialize(args)
     @parsed_options = {}
-    @arguments = args
   end
 
   def parse
