@@ -39,4 +39,3 @@ class HtmlExport
     opening_tag.sub("<","</")
   end
 end
-

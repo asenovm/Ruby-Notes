@@ -1,5 +1,4 @@
 class CsvExport
-
   CSV_VALUE_SEPARATOR = ', '
 
   def self.export(note_list)

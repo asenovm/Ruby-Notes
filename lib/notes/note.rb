@@ -1,4 +1,3 @@
-require 'set'
 class Note
 
   attr_accessor :due_date, :description, :tags, :id
@@ -31,5 +30,4 @@ class Note
     end
     res.chop!.chop!
   end
-
 end
