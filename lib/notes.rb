@@ -2,6 +2,10 @@ require 'set'
 
 require 'trollop'
 
+require 'notes/export/console_export'
+require 'notes/export/html_export'
+require 'notes/export/csv_export'
+
 require 'notes/note'
 require 'notes/option_parser'
 
