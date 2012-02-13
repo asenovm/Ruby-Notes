@@ -11,6 +11,7 @@ module Notes
               opt option.name, option.description, option.type
             end
         end
+        @parsed_options
       end
     end
   end
