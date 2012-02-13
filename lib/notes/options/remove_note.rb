@@ -2,7 +2,7 @@ module Notes
   module Options
     class RemoveNote
       def name
-        :remove
+        :remove_note
       end
 
       def description
