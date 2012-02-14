@@ -7,7 +7,7 @@ module Notes
       elsif options[:html]
         @export = HtmlExport.new options[:html]
       elsif options[:csv]
-        @export = CSVExport.new options[:csv]
+        @export = CsvExport.new options[:csv]
       end
       @db_controller = DatabaseController.new
     end
