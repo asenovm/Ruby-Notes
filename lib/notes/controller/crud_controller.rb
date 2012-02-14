@@ -27,12 +27,11 @@ module Notes
     end
 
     def update
-      @db_controller.update Note.new @options, Criteria.new @options
+      @db_controller.update Note.new(@options), Criteria.new(@options)
     end
 
     def find
       @db_controller.find Criteria.new @options
     end
-
   end
 end
