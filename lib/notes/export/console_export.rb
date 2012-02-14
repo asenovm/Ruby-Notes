@@ -14,7 +14,7 @@ module Notes
     
     private
     def center_in_container(container_length, content)
-      '|' + ' ' * ((container_length - content.length)/2) + content + ' ' * ((container_length - content.length)/2)
+      '|' + ' ' * ((container_length - content.length)/2.0).floor + content + ' ' * ((container_length - content.length)/2.0).ceil
     end
   end
 end
