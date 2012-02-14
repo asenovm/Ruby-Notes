@@ -1,5 +1,4 @@
 module Notes
-  module Model
     class DatabaseController
       def initialize 
         @collection = Mongo::Connection.new('localhost').db('notes')['notes']
@@ -10,7 +9,7 @@ module Notes
       end
 
       def insert note
-        @collection.insert note.to_s
+        @collection.insert(note.to_hash)
       end
 
       def remove criteria
@@ -21,5 +20,4 @@ module Notes
         @collecton.update({'id' => note.id}, {'$set' => {criteria.name => criteria.value}})
       end
     end
-  end
 end

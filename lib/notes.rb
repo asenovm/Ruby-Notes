@@ -1,6 +1,5 @@
-require 'set'
-
 require 'trollop'
+require 'mongo'
 
 require 'notes/export/console_export'
 require 'notes/export/html_export'

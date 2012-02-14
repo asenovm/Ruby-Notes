@@ -7,7 +7,7 @@ module Notes
       @due_date = options[:due_date]
     end
 
-    def to_s
+    def to_hash
       { 'tag' => @tag, 'description' => @description, 'due_date' => @due_date}
     end
   end
