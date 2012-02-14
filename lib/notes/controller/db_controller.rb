@@ -5,7 +5,7 @@ module Notes
       end
 
       def find criteria
-        p @collection.find_one({ criteria.name => criteria.value})
+        @collection.find({ criteria.name => criteria.value})
       end
 
       def insert note

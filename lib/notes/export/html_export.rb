@@ -10,33 +10,25 @@ module Notes
     TABLE_ROW = '<tr>'
     TABLE_CELL = '<td>'
 
-    def self.export(note_list)
-      notes_export = TABLE
-      note_list.each do |note|
-        notes_export += note_to_html(note)
-      end
-      notes_export += get_closing_tag(TABLE)
-      attach_headers(notes_export)
-    end
-
-    def self.note_to_html(note)
+    def export_note note_hash
       res = TABLE_ROW
-      res += TABLE_CELL + note.id + get_closing_tag(TABLE_CELL)
-      res += TABLE_CELL + note.get_tags_as_string + get_closing_tag(TABLE_CELL)
-      res += TABLE_CELL + note.description + get_closing_tag(TABLE_CELL)
-      res += TABLE_CELL + note.due_date + get_closing_tag(TABLE_CELL)
+      res += TABLE_CELL + note_hash['id'] + get_closing_tag(TABLE_CELL)
+      res += TABLE_CELL + note_hash['tag'] + get_closing_tag(TABLE_CELL)
+      res += TABLE_CELL + note_hash['description'] + get_closing_tag(TABLE_CELL)
+      res += TABLE_CELL + note_hash['due_date'] + get_closing_tag(TABLE_CELL)
       res += get_closing_tag(TABLE_ROW)
       res
     end
 
-    def self.attach_headers(html_body)
+    private
+    def attach_headers html_body
       res = DOCTYPE  + HTML + HEAD + ENCODING
       res += TITLE + get_closing_tag(HEAD) 
       res += BODY + html_body + get_closing_tag(BODY) + get_closing_tag(HTML)
       res
     end
 
-    def self.get_closing_tag(opening_tag)
+    def get_closing_tag opening_tag
       opening_tag.sub("<","</")
     end
   end

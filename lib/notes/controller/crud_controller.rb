@@ -2,6 +2,13 @@ module Notes
   class CRUDController
     def initialize options
       @options = options
+      if options[:console]
+        @export = ConsoleExport.new
+      elsif options[:html]
+        @export = HtmlExport.new
+      elsif options[:csv]
+        @export = CSVExport.new
+      end
       @db_controller = DatabaseController.new
     end
 
@@ -31,7 +38,10 @@ module Notes
     end
 
     def find
-      @db_controller.find Criteria.new @options
+      result_collection = @db_controller.find Criteria.new @options
+      result_collection.each do |entry|
+        p @export.export_note entry 
+      end
     end
   end
 end
