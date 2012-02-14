@@ -1,35 +1,14 @@
 module Notes
   class Note
-
-    attr_accessor :due_date, :description, :tags, :id
-
-    def initialize
-      @tags = Set.new
+    attr_reader :tag, :description, :due_date
+    def initialize @options
+      @tag = @options[:tag]
+      @description = @options[:desc]
+      @due_date = @options[:due_date]
     end
 
-    def add_tag(tag)
-      @tags.add(tag)
-    end
-
-    def remove_tag(tag)
-      @tags.delete(tag)
-    end
-
-    def remove_due_date
-      @due_date = nil
-    end
-
-    def remove_description
-      @description = nil
-    end
-
-    def get_tags_as_string
-      res = ''
-      @tags.each do |tag|
-        res += tag
-        res += ', '
-      end
-      res.chop!.chop!
+    def to_s
+      { 'tag' => @tag, 'description' => @description, 'due_date' => @due_date}
     end
   end
 end
