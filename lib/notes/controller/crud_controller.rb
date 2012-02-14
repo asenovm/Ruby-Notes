@@ -5,9 +5,9 @@ module Notes
       if options[:console]
         @export = ConsoleExport.new
       elsif options[:html]
-        @export = HtmlExport.new
+        @export = HtmlExport.new options[:html]
       elsif options[:csv]
-        @export = CSVExport.new
+        @export = CSVExport.new options[:csv]
       end
       @db_controller = DatabaseController.new
     end
@@ -39,9 +39,7 @@ module Notes
 
     def find
       result_collection = @db_controller.find Criteria.new @options
-      result_collection.each do |entry|
-        p @export.export_note entry 
-      end
+      @export.export_notes result_collection
     end
   end
 end
