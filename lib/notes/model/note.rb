@@ -1,10 +1,10 @@
 module Notes
   class Note
     attr_reader :tag, :description, :due_date
-    def initialize @options
-      @tag = @options[:tag]
-      @description = @options[:desc]
-      @due_date = @options[:due_date]
+    def initialize options
+      @tag = options[:tag]
+      @description = options[:desc]
+      @due_date = options[:due_date]
     end
 
     def to_s
