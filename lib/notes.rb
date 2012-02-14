@@ -6,8 +6,12 @@ require 'notes/export/console_export'
 require 'notes/export/html_export'
 require 'notes/export/csv_export'
 
-require 'notes/note'
-require 'notes/option_parser'
+require 'notes/model/note'
+require 'notes/model/criteria'
+
+require 'notes/controller/option_parser'
+require 'notes/controller/crud_controller'
+require 'notes/controller/db_controller'
 
 require 'notes/options/add_note'
 require 'notes/options/description'
