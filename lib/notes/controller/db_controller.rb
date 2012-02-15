@@ -4,8 +4,12 @@ module Notes
         @collection = Mongo::Connection.new('localhost').db('notes')['notes']
       end
 
-      def find criteria
-        @collection.find({ criteria.name => criteria.value})
+      def find criterias
+        query = []
+        criterias.each do |criteria|
+          query << criteria.to_hash
+        end
+        @collection.find({'$and' => query})
       end
 
       def insert note

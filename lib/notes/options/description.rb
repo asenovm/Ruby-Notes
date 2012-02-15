@@ -2,7 +2,7 @@ module Notes
   module Options
     class Description
       def name
-        :desc
+        :description
       end
 
       def description

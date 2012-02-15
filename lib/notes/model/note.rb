@@ -4,7 +4,7 @@ module Notes
 
     def initialize options
       @tag = options[:tag]
-      @description = options[:desc]
+      @description = options[:description]
       @due_date = options[:due_date]
       @token = options[:id]
     end
