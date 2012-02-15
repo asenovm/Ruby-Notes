@@ -2,7 +2,10 @@ module Notes
   module Options
     class Options
       def self.get_options
-        [AddNote.new, RemoveNote.new, FindNote.new, UpdateNote.new, Tag.new, Description.new, DueDate.new, Id.new, Html.new, CSV.new, Console.new]
+        options = [AddNote.new, RemoveNote.new, FindNote.new, UpdateNote.new]
+        options += [Tag.new, Description.new, DueDate.new, Id.new, Html.new]
+        options += [CSV.new, Console.new, Current.new]
+        options
       end
     end
   end
