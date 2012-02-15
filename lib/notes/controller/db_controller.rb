@@ -16,8 +16,10 @@ module Notes
         @collection.remove({'$and' =>  get_criterias_as_hashes(criterias)})
       end
 
-      def update note, criteria
-        @collection.update({'token' => note.token}, {'$set' => {criteria.name => criteria.value}})
+      def update note, criterias
+        criterias.each do |criteria|
+          @collection.update({'token' => note.token}, {'$set' => {criteria.name => criteria.value}})
+        end
       end
 
       private
