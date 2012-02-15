@@ -25,5 +25,3 @@ require 'notes/options/csv'
 require 'notes/options/console'
 require 'notes/options/options'
 require 'notes/options/current'
-
-require 'notes/utils/array_util'
