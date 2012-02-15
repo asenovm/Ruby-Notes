@@ -16,7 +16,7 @@ module Notes
     end
 
     def export_note note_hash
-      res = note_hash['_id'].to_s  + CSV_VALUE_SEPARATOR + note_hash['tag'] + CSV_VALUE_SEPARATOR
+      res = note_hash['token']  + CSV_VALUE_SEPARATOR + note_hash['tag'] + CSV_VALUE_SEPARATOR
       res += '"' + note_hash['description'] + '"' + CSV_VALUE_SEPARATOR + note_hash['due_date']
       res
     end

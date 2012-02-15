@@ -17,7 +17,7 @@ module Notes
       end
 
       def update note, criteria
-        @collecton.update({'id' => note.id}, {'$set' => {criteria.name => criteria.value}})
+        @collection.update({'token' => note.token}, {'$set' => {criteria.name => criteria.value}})
       end
     end
 end

@@ -10,7 +10,7 @@ module Notes
       end
 
       def type
-        { :type => Integer }
+        { :type => String}
       end
     end
   end

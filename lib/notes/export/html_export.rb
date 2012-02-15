@@ -31,7 +31,7 @@ module Notes
 
     def export_note note_hash
       res = TABLE_ROW
-      res += TABLE_CELL + note_hash['_id'].to_s + get_closing_tag(TABLE_CELL)
+      res += TABLE_CELL + note_hash['token'] + get_closing_tag(TABLE_CELL)
       res += TABLE_CELL + note_hash['tag'] + get_closing_tag(TABLE_CELL)
       res += TABLE_CELL + note_hash['description'] + get_closing_tag(TABLE_CELL)
       res += TABLE_CELL + note_hash['due_date'] + get_closing_tag(TABLE_CELL)
