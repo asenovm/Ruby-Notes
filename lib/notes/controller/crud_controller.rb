@@ -3,24 +3,24 @@ module Notes
     def initialize options
       @options = options
       @criterias = get_criterias
-      if options[:console]
+      if options[Options::CONSOLE_EXPORT]
         @export = ConsoleExport.new
-      elsif options[:html]
-        @export = HtmlExport.new options[:html]
-      elsif options[:csv]
-        @export = CsvExport.new options[:csv]
+      elsif options[Options::HTML_EXPORT]
+        @export = HtmlExport.new options[Options::HTML_EXPORT]
+      elsif options[Options::CSV_EXPORT]
+        @export = CsvExport.new options[Options::CSV_EXPORT]
       end
       @db_controller = DatabaseController.new
     end
 
     def perform_action
-      if @options[:add_note]
+      if @options[Options::ADD_NOTE]
         insert
-      elsif @options[:remove_note]
+      elsif @options[Options::REMOVE_NOTE]
         remove
-      elsif @options[:update_note]
+      elsif @options[Options::UPDATE_NOTE]
         update
-      elsif @options[:find_note]
+      elsif @options[Options::FIND_NOTE]
         find
       end
     end
@@ -45,7 +45,7 @@ module Notes
 
     def get_criterias
       result = []
-      criterias = [:tag, :description, :current, :due_date, :token]
+      criterias = [Options::TAG, Options::DESCRIPTION, Options::CURRENT, Options::DUE_DATE, Options::TOKEN]
       @options.each do |key, value|
         if criterias.include?(key) && @options[key]
           result << Criteria.new(key.to_s, value)

@@ -23,10 +23,10 @@ module Notes
     end
 
     def export_note(note_hash)
-      result = center_in_container(ID_FIELD_LENGTH, note_hash['token'])
-      result += center_in_container(TAG_FIELD_LENGTH, note_hash['tag'])
-      result += center_in_container(DESCRIPTION_FIELD_LENGTH, note_hash['description'])
-      result += center_in_container(DUE_DATE_FIELD_LENGTH, note_hash['due_date'])
+      result = center_in_container(ID_FIELD_LENGTH, note_hash[Options::TOKEN.to_s])
+      result += center_in_container(TAG_FIELD_LENGTH, note_hash[Options::TAG.to_s])
+      result += center_in_container(DESCRIPTION_FIELD_LENGTH, note_hash[Options::DESCRIPTION.to_s])
+      result += center_in_container(DUE_DATE_FIELD_LENGTH, note_hash[Options::DUE_DATE.to_s])
       result += '|'
       puts result
     end
