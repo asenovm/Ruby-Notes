@@ -27,6 +27,7 @@ module Notes
       end
       res += get_closing_tag TABLE
       @file.puts(attach_headers res)
+      @file.close
     end
 
     def export_note note_hash

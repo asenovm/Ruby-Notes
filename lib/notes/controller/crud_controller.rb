@@ -40,7 +40,7 @@ module Notes
 
     def find
       result_collection = @db_controller.find @criterias
-      @export.export_notes result_collection
+      puts @export.export_notes result_collection
     end
 
     def get_criterias

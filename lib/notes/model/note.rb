@@ -3,14 +3,14 @@ module Notes
     attr_reader :tag, :description, :due_date, :token
 
     def initialize options
-      @tag = options[:tag] ? options[:tag] : 'unspecified'
-      @description = options[:description] ? options[:description] : 'unspecified'
-      @due_date = options[:due_date] ? options[:due_date] : 'unspecified'
-      @token = options[:id] ? options[:id] : 'unspecified'
+      @tag = options[Options::TAG] ? options[Options::TAG] : 'unspecified'
+      @description = options[Options::DESCRIPTION] ? options[Options::DESCRIPTION] : 'unspecified'
+      @due_date = options[Options::DUE_DATE] ? options[Options::DUE_DATE] : 'unspecified'
+      @token = options[Options::ID] ? options[Options::ID] : 'unspecified'
     end
 
     def to_hash
-      { 'tag' => @tag, 'description' => @description, 'due_date' => @due_date, 'token' => get_token.to_s }
+      { Options::TAG.to_s  => @tag, Options::DESCRIPTION.to_s => @description, Options::DUE_DATE.to_s => @due_date, Options::TOKEN.to_s => get_token.to_s }
     end
 
     def get_token
