@@ -10,7 +10,7 @@ module Notes
       elsif options[Options::CSV_EXPORT]
         @export = CsvExport.new options[Options::CSV_EXPORT]
       end
-      @db_controller = DatabaseController.new
+      @db_controller = DatabaseController.new 'notes'
     end
 
     def perform_action

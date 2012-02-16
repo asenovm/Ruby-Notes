@@ -1,7 +1,7 @@
 module Notes
     class DatabaseController
-      def initialize 
-        @collection = Mongo::Connection.new('localhost').db('notes')['notes']
+      def initialize collection_name
+        @collection = Mongo::Connection.new('localhost').db('notes')[collection_name]
       end
 
       def find criterias
@@ -14,6 +14,10 @@ module Notes
 
       def remove criterias
         @collection.remove({'$and' =>  get_criterias_as_hashes(criterias)})
+      end
+
+      def remove_all
+        @collection.remove({})
       end
 
       def update note, criterias
