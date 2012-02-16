@@ -10,7 +10,7 @@ module Notes
       end
       
       def description
-        'Specified action will only be applied to notes with current data that is after or coincides with the current day.'
+        'Specified action will only be applied to notes with due date that is after or coincides with the current day.'
       end
     end
   end

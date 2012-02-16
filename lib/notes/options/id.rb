@@ -6,7 +6,7 @@ module Notes
       end
       
       def description
-        'Specified actions is only applied to the note with the id given.'
+        'Specified action is only applied to the note with the id given.'
       end
 
       def type
