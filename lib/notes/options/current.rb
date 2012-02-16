@@ -2,7 +2,7 @@ module Notes
   module Options
     class Current
       def name
-        :current
+        Notes::Options::CURRENT
       end
 
       def type

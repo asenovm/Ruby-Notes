@@ -2,7 +2,7 @@ module Notes
   module Options
     class Description
       def name
-        :description
+        Notes::Options::DESCRIPTION
       end
 
       def description

@@ -2,7 +2,7 @@ module Notes
   module Options
     class UpdateNote
       def name
-        :update_note
+        Notes::Options::UPDATE_NOTE
       end
 
       def description

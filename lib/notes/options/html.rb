@@ -2,7 +2,7 @@ module Notes
   module Options
     class Html
       def name
-        :html
+        Notes::Options::HTML_EXPORT
       end
 
       def type

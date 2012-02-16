@@ -2,7 +2,7 @@ module Notes
   module Options
     class Console
       def name
-        :console
+        Notes::Options::CONSOLE_EXPORT
       end
 
       def description

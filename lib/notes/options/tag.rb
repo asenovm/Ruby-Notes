@@ -2,7 +2,7 @@ module Notes
   module Options
     class Tag
       def name
-        :tag
+        Notes::Options::TAG
       end
 
       def description

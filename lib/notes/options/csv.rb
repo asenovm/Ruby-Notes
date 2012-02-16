@@ -3,7 +3,7 @@ module Notes
     class CSV
 
       def name
-        :csv
+        Notes::Options::CSV_EXPORT
       end
 
       def type

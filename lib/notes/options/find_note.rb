@@ -2,7 +2,7 @@ module Notes
   module Options
     class FindNote
       def name
-        :find_note
+        Notes::Options::FIND_NOTE
       end
 
       def description

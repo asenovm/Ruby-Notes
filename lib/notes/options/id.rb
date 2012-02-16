@@ -2,7 +2,7 @@ module Notes
   module Options
     class Id
       def name
-        :id
+        Notes::Options::ID
       end
       
       def description

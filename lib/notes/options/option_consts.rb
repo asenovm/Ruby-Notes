@@ -5,6 +5,7 @@ module Notes
     UPDATE_NOTE = :update_note
     FIND_NOTE = :find_note
     TAG = :tag
+    ID = :id
     DESCRIPTION = :description
     DUE_DATE = :due_date
     TOKEN = :token

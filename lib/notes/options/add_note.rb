@@ -2,7 +2,7 @@ module Notes
   module Options
     class AddNote
       def name
-        :add_note
+        Notes::Options::ADD_NOTE
       end
 
       def description

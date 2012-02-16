@@ -2,7 +2,7 @@ module Notes
   module Options
     class DueDate
       def name
-        :due_date
+        Notes::Options::DUE_DATE
       end
       
       def description
