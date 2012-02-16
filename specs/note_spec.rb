@@ -1,84 +1,34 @@
-describe @note do
-
-  before do
-    @note = Note.new
-  end
-
+describe Notes::Note do
   describe 'initialization' do
-    it 'can be initialized with no args' do
+
+    it 'can be initialized with default args' do
+      note = Notes::Note.new({})
+    end
+
+    it 'gets default values if none were specified ' do
+      note = Notes::Note.new({})
+      note.tag.should eq 'unspecified'
+      note.description.should eq 'unspecified'
+      note.due_date.should eq 'unspecified'
+    end
+
+    it 'correctly reads passed values' do
+      note = Notes::Note.new({Notes::Options::TAG => 'to do', Notes::Options::DESCRIPTION => 'description', Notes::Options::DUE_DATE => '18.02.2012'})
+      note.tag.should eq 'to do'
+      note.description.should eq 'description'
+      note.due_date.should eq '18.02.2012'
     end
   end
 
-  describe'tags work properly' do
-    it 'can have a tag' do
-      @note.add_tag('todo')
-    end
-    
-    it 'cannot have one tag multiple times' do
-      @note.add_tag('multiple')
-      @note.add_tag('multiple')
-      @note.tags.count.should eq 1
+  describe 'to_hash' do
+    it 'correctly creates corresponding hash when no parameters are specified' do
+      note = Notes::Note.new({})
+      note.to_hash.should eq ({Notes::Options::TAG.to_s => 'unspecified', Notes::Options::DESCRIPTION.to_s => 'unspecified', Notes::Options::DUE_DATE.to_s => 'unspecified', Notes::Options::TOKEN.to_s => note.get_token.to_s})
     end
 
-    it 'can have many tags' do
-      @note.add_tag('to do')
-      @note.add_tag('not to do')
-      @note.add_tag('third tag')
-      @note.tags.count.should eq 3
-    end
-
-    it 'can have tags removed' do
-      @note.add_tag('to do')
-      @note.remove_tag('to do')
-      @note.tags.count.should eq 0
-    end
-
-    it 'can have unexisting tags removed' do
-      @note.remove_tag('to do')
-      @note.tags.count.should eq 0
+    it 'correctly creates corresponding has when parameters are given' do
+      note = Notes::Note.new({Notes::Options::TAG => 'to do', Notes::Options::DESCRIPTION => 'description', Notes::Options::DUE_DATE => '18.02.2012'})
+      note.to_hash.should eq({Notes::Options::TAG.to_s => 'to do', Notes::Options::DESCRIPTION.to_s => 'description', Notes::Options::DUE_DATE.to_s => '18.02.2012', Notes::Options::TOKEN.to_s => note.get_token.to_s})
     end
   end
-
-  describe 'description' do
-    it 'can be set a description' do
-      @note.description = 'foobar'
-    end
-
-    it 'can have description removed' do
-      @note.description = "foo bar"
-      @note.remove_description
-      @note.description.should eq nil
-    end
-
-    it 'can have description overriden' do
-      @note.description = 'foobar'
-      @note.description = 'new description'
-      @note.description.should eq 'new description'
-    end
-  end
-
-  describe 'to string output' do
-    it 'can have tags exported to string' do
-      @note.add_tag 'to do'
-      @note.get_tags_as_string.should eq 'to do'
-    end
-
-    it 'can have multiple tags exported as string correctly' do
-      @note.add_tag 'to do'
-      @note.add_tag 'not to do'
-      @note.add_tag 'something else'
-      @note.get_tags_as_string.should eq 'to do, not to do, something else'
-    end
-
-    it 'adding and removing tags dont mess with tags output' do
-      @note.add_tag 'to do'
-      @note.add_tag 'to be done'
-      @note.add_tag 'music'
-      @note.add_tag 'something else'
-      @note.remove_tag 'to do'
-      @note.remove_tag ' music '
-      @note.get_tags_as_string.should eq 'to be done, music, something else'
-    end
-  end
-
 end

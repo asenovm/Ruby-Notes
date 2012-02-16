@@ -10,8 +10,11 @@ module Notes
     end
 
     def to_hash
-      token = @tag.hash * 1231 + @description.hash * 1237 + @due_date.hash * 37
-      { 'tag' => @tag, 'description' => @description, 'due_date' => @due_date, 'token' => token.to_s }
+      { 'tag' => @tag, 'description' => @description, 'due_date' => @due_date, 'token' => get_token.to_s }
+    end
+
+    def get_token
+      @tag.hash * 1231 + @description.hash * 1237 + @due_date.hash * 37
     end
   end
 end
