@@ -53,4 +53,33 @@ EXPORT
 EXPORT
     end
   end
+
+  describe 'csv export' do
+    
+   # after do
+   #   File.delete './out.csv'
+   # end
+
+    it 'renders properly single line output' do
+      csv_export = Notes::CsvExport.new './out.csv'
+      notes_to_be_exported =  [{ Notes::Options::TOKEN.to_s => '293603118701', Notes::Options::TAG.to_s => 'martin', Notes::Options::DESCRIPTION.to_s => 'martoooO!', Notes::Options::DUE_DATE.to_s => '20.02.2012'}]
+      csv_export.export_notes notes_to_be_exported
+      IO.read("./out.csv").should eq <<EXPORT
+293603118701, martin, "martoooO!", 20.02.2012
+EXPORT
+    end
+
+    it 'renders complex output correctly' do
+      csv_export = Notes::CsvExport.new './out.csv'
+      notes_to_be_exported =  [{ Notes::Options::TOKEN.to_s => '293603118701', Notes::Options::TAG.to_s => 'martin', Notes::Options::DESCRIPTION.to_s => 'martoooO!', Notes::Options::DUE_DATE.to_s => '20.02.2012'}]
+      notes_to_be_exported <<  ({Notes::Options::TOKEN.to_s => '-936439782034', Notes::Options::TAG.to_s => 'martin', Notes::Options::DESCRIPTION.to_s => 'hellp', Notes::Options::DUE_DATE.to_s => '17.02.2012'})
+      notes_to_be_exported << ({Notes::Options::TOKEN.to_s => '-591934493852', Notes::Options::TAG.to_s => 'martin', Notes::Options::DESCRIPTION.to_s => 'ruby rubira', Notes::Options::DUE_DATE.to_s => '17.02.2012'})
+      csv_export.export_notes notes_to_be_exported
+      IO.read("./out.csv").should eq <<EXPORT
+293603118701, martin, "martoooO!", 20.02.2012
+-936439782034, martin, "hellp", 17.02.2012
+-591934493852, martin, "ruby rubira", 17.02.2012
+EXPORT
+    end
+  end
 end

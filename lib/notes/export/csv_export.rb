@@ -10,9 +10,11 @@ module Notes
       res = ''
       notes_list.each do |note|
         res += export_note note
-        res += '\n'
+        res += "\n"
       end
+      res.chomp! "\n"
       @file.puts res
+      @file.close
     end
 
     def export_note note_hash
