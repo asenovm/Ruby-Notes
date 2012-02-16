@@ -8,6 +8,10 @@ module Notes
         @collection.find({'$and' => get_criterias_as_hashes(criterias)})
       end
 
+      def find_one criterias
+        @collection.find_one({'$and' => get_criterias_as_hashes(criterias)})
+      end
+
       def insert note
         @collection.insert(note.to_hash)
       end
