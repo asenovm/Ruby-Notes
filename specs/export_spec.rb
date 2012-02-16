@@ -56,9 +56,9 @@ EXPORT
 
   describe 'csv export' do
     
-   # after do
-   #   File.delete './out.csv'
-   # end
+    after do
+      File.delete './out.csv'
+    end
 
     it 'renders properly single line output' do
       csv_export = Notes::CsvExport.new './out.csv'
