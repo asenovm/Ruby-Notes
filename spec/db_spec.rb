@@ -2,7 +2,11 @@ describe 'works with db' do
 
   before do
     @db_controller = Notes::DatabaseController.new 'spec'
-    @note = Notes::Note.new({Notes::Options::TAG => 'to do', Notes::Options::DESCRIPTION => 'description', Notes::Options::DUE_DATE => '16.02.2012'})
+    test_hash = {}
+    test_hash[Notes::Options::TAG] = 'to do'
+    test_hash[Notes::Options::DESCRIPTION] = 'description'
+    test_hash[Notes::Options::DUE_DATE] = '16.02.2012'
+    @note = Notes::Note.new(test_hash)
     @db_controller.create @note
   end
 
@@ -25,7 +29,7 @@ describe 'works with db' do
   it 'can update note' do
     inserted_note = @db_controller.find_one([Notes::Criteria.new(Notes::Options::TAG.to_s, 'to do')])
     update_criteria = [Notes::Criteria.new(Notes::Options::TAG.to_s, 'other')]
-    @db_controller.update(Notes::Note.new({Notes::Options::ID => inserted_note[Notes::Options::TOKEN.to_s]}), update_criteria)
+    @db_controller.update(Notes::Note.new({Notes::Options::TOKEN => inserted_note[Notes::Options::TOKEN.to_s]}), update_criteria)
     query_result = @db_controller.find update_criteria
     result_length = 0
     query_result.each do |result|

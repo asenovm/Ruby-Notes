@@ -6,7 +6,7 @@ module Notes
       @tag = (options[Options::TAG] && options[Options::TAG] != [])? options[Options::TAG] : 'unspecified'
       @description = options[Options::DESCRIPTION] ? options[Options::DESCRIPTION] : 'unspecified'
       @due_date = options[Options::DUE_DATE] ? options[Options::DUE_DATE] : 'unspecified'
-      @token = options[Options::ID] ? options[Options::ID] : 'unspecified'
+      @token = options[Options::TOKEN] ? options[Options::TOKEN] : 'unspecified'
     end
 
     def to_hash
