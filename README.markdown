@@ -8,20 +8,20 @@ Ruby notes is a console based system that let you make notes about important thi
 <center><h2>Usage</h2></center>
 Ruby Notes can be used with several options. These options are as follows: <br />
 <ul>
-  <li>         --add-note, -a:   Adds a new note with the parameters specified</li>
-  <li>      --remove-note, -r:   Removes the specified note</li>
-  <li>        --find-note, -f:   Finds the specified note</li>
-  <li>      --update-note, -u:   Updates the specified note</li>
-  <li>          --tag, -t <s>:   Specified action only takes effect on notes with the tag given.</li>
-  <li>  --description, -d <s>:   Specify the description for the note</li>
-  <li>     --due-date, -e <s>:   Specify the due date for the note</li>
-  <li>        --token, -o <s>:   Specified action is only applied to the note with the id given.</li>
-  <li>         --html, -h <s>:   The result of this operation(if any) will be saved into the file given in html format</li>
-  <li>          --csv, -c <s>:   The result of this operation(if any) will be printed in the file specified in csv format.</li>
-  <li>          --console, -n:   The result of this operation(if any) will be printed in the console</li>
-  <li>              --current:   Specified action will only be applied to notes with due date that is after or coincides with the current day.</li>
-  <li>              --all, -l:   Specified action is applied to all the matching notes</li>
-  <li>             --help, -p:   Show this message</li>
+  <li>         <strong>--add-note</strong>, <strong>-a</strong>:   <em>Adds a new note with the parameters specified</em></li>
+  <li>      <strong>--remove-note</strong>, <strong>-r</strong>:   <em>Removes the specified note</em></li>
+  <li>        <strong>--find-note</strong>, <strong>-f</strong>:   <em>Finds the specified note</em></li>
+  <li>      <strong>--update-note</strong>, <strong>-u</strong>:   <em>Updates the specified note</em></li>
+  <li>          <strong>--tag</strong>, <strong>-t</strong> <s>:   <em>Specified action only takes effect on notes with the tag given</em></li>
+  <li>  <strong>--description</strong>, <strong>-d</strong> <s>:   <em>Specify the description for the note</em></li>
+  <li>     <strong>--due-date</strong>, <strong>-e</strong> <s>:   <em>Specify the due date for the note</em></li>
+  <li>        <strong>--token</strong>, <strong>-o</strong> <s>:   <em>Specified action is only applied to the note with the id given</em></li>
+  <li>         <strong>--html</strong>, <strong>-h</strong> <s>:   <em>The result of this operation(if any) will be saved into the file given in html format</em></li>
+  <li>          <strong>--csv</strong>, <strong>-c</strong> <s>:   <em>The result of this operation(if any) will be printed in the file specified in csv format</em></li>
+  <li>          <strong>--console</strong>, <strong>-n</strong>:   <em>The result of this operation(if any) will be printed in the console</em></li>
+  <li>              <strong>--current</strong>:   <em>Specified action will only be applied to notes with due date that is after or coincides with the current day</em></li>
+  <li>              <strong>--all</strong>, <strong>-l</strong>:   <em>Specified action is applied to all the matching notes</em></li>
+  <li>             <strong>--help</strong>, <strong>-p</strong>:   <em>Show this message</em></li>
 </ul>
 <hr />
 
