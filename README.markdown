@@ -19,7 +19,7 @@ Ruby Notes can be used with several options. These options are as follows: <br /
   <li>         <strong>--html</strong>, <strong>-h</strong> <s>:   <em>The result of this operation(if any) will be saved into the file given in html format</em></li>
   <li>          <strong>--csv</strong>, <strong>-c</strong> <s>:   <em>The result of this operation(if any) will be printed in the file specified in csv format</em></li>
   <li>          <strong>--console</strong>, <strong>-n</strong>:   <em>The result of this operation(if any) will be printed in the console</em></li>
-  <li>              <strong>--current</strong>:   <em>Specified action will only be applied to notes with due date that is after or coincides with the current day</em></li>
+  <li>              <strong>--current</strong>:   <em>Specified action will only be applied to notes with due date that is after or coincides with the current day. Currently not supported.</em></li>
   <li>              <strong>--all</strong>, <strong>-l</strong>:   <em>Specified action is applied to all the matching notes</em></li>
   <li>             <strong>--help</strong>, <strong>-p</strong>:   <em>Show this message</em></li>
 </ul>
