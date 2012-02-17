@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.files = [ 'bin/notes.rb',
               'lib/notes.rb', 
               'lib/notes/controller/crud_controller.rb',
-              'lib/notes/controller/db_controller.rb', 
+              'lib/notes/model/db_manager.rb', 
               'lib/notes/controller/option_parser.rb', 
               'lib/notes/export/base_export.rb',
               'lib/notes/export/console_export.rb',
