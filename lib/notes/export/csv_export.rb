@@ -1,5 +1,5 @@
 module Notes
-  class CsvExport
+  class CsvExport < BaseExport
     CSV_VALUE_SEPARATOR = ', '
 
     def initialize output_file_path
@@ -18,8 +18,9 @@ module Notes
     end
 
     def export_note note_hash
-      res = note_hash[Options::TOKEN.to_s]  + CSV_VALUE_SEPARATOR + note_hash[Options::TAG.to_s] + CSV_VALUE_SEPARATOR
-      res += '"' + note_hash[Options::DESCRIPTION.to_s] + '"' + CSV_VALUE_SEPARATOR + note_hash[Options::DUE_DATE.to_s]
+      res = note_hash[Options::TOKEN.to_s]  + CSV_VALUE_SEPARATOR + get_tags_as_string(note_hash[Options::TAG.to_s])
+      res +=  CSV_VALUE_SEPARATOR + '"' + note_hash[Options::DESCRIPTION.to_s] + '"'
+      res += CSV_VALUE_SEPARATOR + note_hash[Options::DUE_DATE.to_s]
       res
     end
   end

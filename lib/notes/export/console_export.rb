@@ -1,5 +1,5 @@
 module Notes
-  class ConsoleExport
+  class ConsoleExport < BaseExport
     ID_FIELD_LENGTH =  20
     TAG_FIELD_LENGTH = 35
     DESCRIPTION_FIELD_LENGTH = 70
@@ -36,13 +36,6 @@ module Notes
     private
     def center_in_container(container_length, content)
       '|' + ' ' * ((container_length - content.length)/2.0).floor + content + ' ' * ((container_length - content.length)/2.0).ceil
-    end
-
-    def get_tags_string tags
-      if tags.kind_of? Array
-        return Notes::ArrayUtil.array_to_string tags
-      end
-      tags
     end
 
   end
