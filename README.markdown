@@ -25,3 +25,7 @@ Ruby Notes can be used with several options. These options are as follows: <br /
 </ul>
 <hr />
 
+<center><h2>Author</h2></center>
+<strong>Martin Asenov Asenov</strong> <br />
+email: <strong>asenov.m@gmail.com</strong>
+
