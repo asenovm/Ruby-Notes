@@ -1,0 +1,1 @@
+--require ./../bin/notes.rb --colour --format documentation
