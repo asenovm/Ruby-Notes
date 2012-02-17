@@ -8,12 +8,7 @@ module Notes
 
       def to_hash
         if @value.kind_of? Array
-          result_value = ''
-          @value.each do |value|
-            result_value += value
-            result_value += ', '
-          end
-          return {@name => result_value.chop!.chop!}
+          return {@name => (Notes::ArrayUtil.array_to_string @value)}
         end
         {@name => @value}
       end

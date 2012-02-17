@@ -13,6 +13,8 @@ require 'notes/controller/option_parser'
 require 'notes/controller/crud_controller'
 require 'notes/controller/db_controller'
 
+require 'notes/utils/array_util'
+
 require 'notes/options/base_option'
 require 'notes/options/add_note'
 require 'notes/options/description'

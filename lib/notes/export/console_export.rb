@@ -40,13 +40,7 @@ module Notes
 
     def get_tags_string tags
       if tags.kind_of? Array
-        tags_set = Set.new tags
-        result = ''
-        tags_set.each do |tag|
-          result += tag
-          result += ', '
-        end
-        return result.chop!.chop!
+        return Notes::ArrayUtil.array_to_string tags
       end
       tags
     end
