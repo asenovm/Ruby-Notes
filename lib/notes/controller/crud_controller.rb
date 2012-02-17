@@ -15,7 +15,7 @@ module Notes
 
     def perform_action
       if @options[Options::ADD_NOTE]
-        insert
+        create
       elsif @options[Options::REMOVE_NOTE]
         remove
       elsif @options[Options::UPDATE_NOTE]
@@ -26,7 +26,7 @@ module Notes
     end
 
     private
-    def insert
+    def create
       @db_controller.insert Note.new @options
     end
 

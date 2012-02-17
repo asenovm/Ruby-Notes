@@ -11,7 +11,10 @@ describe 'works with db' do
   end
 
   it 'can insert and find notes notes successfully' do
-    query_result = @db_controller.find([Notes::Criteria.new(Notes::Options::TAG.to_s, 'to do'), Notes::Criteria.new(Notes::Options::DESCRIPTION.to_s, 'description'), Notes::Criteria.new(Notes::Options::DUE_DATE.to_s, '16.02.2012')])
+    search_criteria = [Notes::Criteria.new(Notes::Options::TAG.to_s, 'to do')]
+    search_criteria << Notes::Criteria.new(Notes::Options::DESCRIPTION.to_s, 'description')
+    search_criteria << Notes::Criteria.new(Notes::Options::DUE_DATE.to_s, '16.02.2012')
+    query_result = @db_controller.find search_criteria
     result_length = 0
     query_result.each do |result|
       result_length += 1
@@ -21,8 +24,9 @@ describe 'works with db' do
 
   it 'can update note' do
     inserted_note = @db_controller.find_one([Notes::Criteria.new(Notes::Options::TAG.to_s, 'to do')])
-    @db_controller.update(Notes::Note.new({Notes::Options::ID => inserted_note[Notes::Options::TOKEN.to_s]}), [Notes::Criteria.new(Notes::Options::TAG.to_s, 'other')])
-    query_result = @db_controller.find([Notes::Criteria.new(Notes::Options::TAG.to_s, 'other')])
+    update_criteria = [Notes::Criteria.new(Notes::Options::TAG.to_s, 'other')]
+    @db_controller.update(Notes::Note.new({Notes::Options::ID => inserted_note[Notes::Options::TOKEN.to_s]}), update_criteria)
+    query_result = @db_controller.find update_criteria
     result_length = 0
     query_result.each do |result|
       result_length +=1
