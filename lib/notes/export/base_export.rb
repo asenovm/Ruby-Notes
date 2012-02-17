@@ -1,5 +1,11 @@
 module Notes
   class BaseExport
+
+    ID = 'ID'
+    TAG = 'TAG'
+    DESCRIPTION = 'DESCRIPTION'
+    DUE_DATE = 'DUE DATE'
+
     private
     def get_tags_string tags
       if tags.kind_of? Array

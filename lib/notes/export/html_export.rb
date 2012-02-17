@@ -9,10 +9,6 @@ module Notes
     TABLE = '<table style="text-align: center;">'
     TABLE_ROW = '<tr>'
     TABLE_CELL = '<td>'
-    ID = 'ID'
-    TAG = 'TAG'
-    DESCRIPTION = 'DESCRIPTION'
-    DUE_DATE = 'DUE DATE'
 
     def initialize output_file_path
       @file = File.new output_file_path , 'w+'
@@ -32,10 +28,10 @@ module Notes
 
     def export_note note_hash
       res = TABLE_ROW
-      res += TABLE_CELL + note_hash['token'] + get_closing_tag(TABLE_CELL)
-      res += TABLE_CELL + get_tags_as_string(note_hash['tag']) + get_closing_tag(TABLE_CELL)
-      res += TABLE_CELL + note_hash['description'] + get_closing_tag(TABLE_CELL)
-      res += TABLE_CELL + note_hash['due_date'] + get_closing_tag(TABLE_CELL)
+      res += TABLE_CELL + note_hash[Notes::Options::TOKEN.to_s] + get_closing_tag(TABLE_CELL)
+      res += TABLE_CELL + get_tags_string(note_hash[Notes::Options::TAG.to_s]) + get_closing_tag(TABLE_CELL)
+      res += TABLE_CELL + note_hash[Notes::Options::DESCRIPTION.to_s] + get_closing_tag(TABLE_CELL)
+      res += TABLE_CELL + note_hash[Notes::Options::DUE_DATE.to_s] + get_closing_tag(TABLE_CELL)
       res += get_closing_tag(TABLE_ROW)
       res
     end
