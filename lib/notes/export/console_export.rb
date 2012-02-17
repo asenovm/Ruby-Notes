@@ -5,10 +5,6 @@ module Notes
     DESCRIPTION_FIELD_LENGTH = 70
     DUE_DATE_FIELD_LENGTH = 14
     HEADER = '+' + '-' * (ID_FIELD_LENGTH + TAG_FIELD_LENGTH + DESCRIPTION_FIELD_LENGTH + DUE_DATE_FIELD_LENGTH + 3) + '+'
-    ID = 'ID'
-    TAG = 'TAG'
-    DESCRIPTION = 'DESCRIPTION'
-    DUE_DATE = 'DUE DATE'
 
     def export_notes note_list
       result = HEADER + "\n"
