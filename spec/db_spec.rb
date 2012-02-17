@@ -3,7 +3,7 @@ describe 'works with db' do
   before do
     @db_controller = Notes::DatabaseController.new 'spec'
     @note = Notes::Note.new({Notes::Options::TAG => 'to do', Notes::Options::DESCRIPTION => 'description', Notes::Options::DUE_DATE => '16.02.2012'})
-    @db_controller.insert @note
+    @db_controller.create @note
   end
 
   after do

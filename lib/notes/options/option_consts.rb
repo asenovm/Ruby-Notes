@@ -13,5 +13,6 @@ module Notes
     CSV_EXPORT = :csv
     HTML_EXPORT = :html
     CURRENT = :current
+    ALL = :all
   end
 end
