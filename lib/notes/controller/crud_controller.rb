@@ -51,7 +51,7 @@ module Notes
 
     def get_criterias
       result = []
-      criterias = [Options::TAG, Options::DESCRIPTION, Options::CURRENT, Options::DUE_DATE, Options::TOKEN, Options::ALL]
+      criterias = [Options::TAG, Options::DESCRIPTION, Options::CURRENT, Options::DUE_DATE, Options::TOKEN , Options::ALL]
       @options.each do |key, value|
         if criterias.include?(key) && @options[key] && @options[key] != []
           result << Criteria.new(key.to_s, value)

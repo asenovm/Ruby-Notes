@@ -1,8 +1,8 @@
 module Notes
   module Options
-    class Id < BaseOption
+    class Token < BaseOption
       def name
-        Notes::Options::ID
+        Notes::Options::TOKEN
       end
       
       def description

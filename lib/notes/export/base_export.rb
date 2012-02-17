@@ -1,7 +1,7 @@
 module Notes
   class BaseExport
 
-    ID = 'ID'
+    TOKEN = 'TOKEN'
     TAG = 'TAG'
     DESCRIPTION = 'DESCRIPTION'
     DUE_DATE = 'DUE DATE'

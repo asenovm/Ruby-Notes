@@ -15,7 +15,7 @@ module Notes
     end
 
     def export_notes notes_list
-      res = TABLE + TABLE_ROW  + TABLE_CELL + ID + get_closing_tag(TABLE_CELL) + TABLE_CELL + TAG + get_closing_tag(TABLE_CELL)
+      res = TABLE + TABLE_ROW  + TABLE_CELL + TOKEN + get_closing_tag(TABLE_CELL) + TABLE_CELL + TAG + get_closing_tag(TABLE_CELL)
       res += TABLE_CELL + DESCRIPTION + get_closing_tag(TABLE_CELL) + TABLE_CELL + DUE_DATE + get_closing_tag(TABLE_CELL)
       res += get_closing_tag(TABLE_ROW)
       notes_list.each do |note|

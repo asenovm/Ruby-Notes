@@ -7,7 +7,7 @@ module Notes
     end
 
     def export_notes notes_list
-      res = ID + CSV_VALUE_SEPARATOR + TAG + CSV_VALUE_SEPARATOR + DESCRIPTION + CSV_VALUE_SEPARATOR + DUE_DATE + "\n"
+      res = TOKEN + CSV_VALUE_SEPARATOR + TAG + CSV_VALUE_SEPARATOR + DESCRIPTION + CSV_VALUE_SEPARATOR + DUE_DATE + "\n"
       notes_list.each do |note|
         res += export_note note
         res += "\n"
