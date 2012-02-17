@@ -8,7 +8,7 @@ module Notes
       def parse
         @parsed_options = Trollop::options do
             Options.get_options.each do |option|
-              opt option.name, option.description, option.type
+              opt option.name, option.description, option.options
             end
         end
         @parsed_options

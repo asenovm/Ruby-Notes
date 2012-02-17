@@ -1,5 +1,6 @@
 require 'trollop'
 require 'mongo'
+require 'set'
 
 require 'notes/export/console_export'
 require 'notes/export/html_export'
@@ -12,6 +13,7 @@ require 'notes/controller/option_parser'
 require 'notes/controller/crud_controller'
 require 'notes/controller/db_controller'
 
+require 'notes/options/base_option'
 require 'notes/options/add_note'
 require 'notes/options/description'
 require 'notes/options/due_date'
@@ -27,3 +29,4 @@ require 'notes/options/options'
 require 'notes/options/current'
 require 'notes/options/option_consts'
 require 'notes/options/all'
+

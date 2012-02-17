@@ -1,16 +1,12 @@
 module Notes
   module Options
-    class AddNote
+    class AddNote < BaseOption
       def name
         Notes::Options::ADD_NOTE
       end
 
       def description
         'Add a new note with the parameters specified'
-      end
-
-      def type
-        { :type => nil }
       end
     end
   end

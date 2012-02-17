@@ -5,7 +5,7 @@ module Notes
       end
 
       def find criterias
-        if should_apply_to_all?(criterias) && criterias.size == 1
+        if should_apply_to_all?(criterias)
           return get_all_records
         end
         @collection.find({'$and' => get_criterias_as_hashes(criterias)})

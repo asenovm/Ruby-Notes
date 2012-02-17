@@ -1,6 +1,6 @@
 module Notes
   module Options
-    class Tag
+    class Tag < BaseOption
       def name
         Notes::Options::TAG
       end
@@ -9,8 +9,8 @@ module Notes
         'Specified action only takes effect on notes with the tag given.'
       end
 
-      def type
-        {:type => String }
+      def options
+        {:type => String, :multi => true}
       end
     end
   end

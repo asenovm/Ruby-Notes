@@ -1,6 +1,6 @@
 module Notes
   module Options
-    class Id
+    class Id < BaseOption
       def name
         Notes::Options::ID
       end
@@ -9,8 +9,8 @@ module Notes
         'Specified action is only applied to the note with the id given.'
       end
 
-      def type
-        { :type => String}
+      def options
+        { :type => String, :multi => false}
       end
     end
   end

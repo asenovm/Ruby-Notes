@@ -1,6 +1,6 @@
 module Notes
   module Options
-    class DueDate
+    class DueDate < BaseOption
       def name
         Notes::Options::DUE_DATE
       end
@@ -9,8 +9,8 @@ module Notes
         'Specify the due date for the note'
       end
 
-      def type
-        {:type => String }
+      def options
+        {:type => String, :multi => false }
       end
     end
   end

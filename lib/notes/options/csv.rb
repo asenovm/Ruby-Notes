@@ -1,13 +1,12 @@
 module Notes
   module Options
-    class CSV
-
+    class CSV < BaseOption
       def name
         Notes::Options::CSV_EXPORT
       end
 
-      def type
-        { :type => String}
+      def options
+        { :type => String, :multi => false}
       end
 
       def description

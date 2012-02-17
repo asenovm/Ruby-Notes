@@ -1,12 +1,12 @@
 module Notes
   module Options
-    class Html
+    class Html < BaseOption
       def name
         Notes::Options::HTML_EXPORT
       end
 
-      def type
-        { :type => String }
+      def options
+        { :type => String, :multi => false }
       end
 
       def description

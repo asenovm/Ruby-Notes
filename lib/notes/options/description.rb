@@ -1,6 +1,6 @@
 module Notes
   module Options
-    class Description
+    class Description < BaseOption
       def name
         Notes::Options::DESCRIPTION
       end
@@ -9,8 +9,8 @@ module Notes
         'Specify the description for the note'
       end
       
-      def type
-        {:type => String }
+      def options
+        {:type => String, :multi => false }
       end
     end
   end

@@ -1,14 +1,10 @@
 module Notes
   module Options
-    class Current
+    class Current < BaseOption
       def name
         Notes::Options::CURRENT
       end
 
-      def type
-        {:type => nil}
-      end
-      
       def description
         'Specified action will only be applied to notes with due date that is after or coincides with the current day.'
       end
