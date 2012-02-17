@@ -1,7 +1,7 @@
 module Notes
   class CRUDController
     def initialize collection_name
-      @db_controller = DatabaseController.new collection_name
+      @db_controller = DatabaseManager.new collection_name
     end
 
     def perform_action options

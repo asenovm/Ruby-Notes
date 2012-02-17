@@ -1,5 +1,5 @@
 module Notes
-    class DatabaseController
+    class DatabaseManager
       def initialize collection_name
         @collection = Mongo::Connection.new('localhost').db('notes')[collection_name]
       end

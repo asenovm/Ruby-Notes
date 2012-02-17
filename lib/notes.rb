@@ -9,10 +9,10 @@ require 'notes/export/csv_export'
 
 require 'notes/model/note'
 require 'notes/model/criteria'
+require 'notes/model/db_manager'
 
 require 'notes/controller/option_parser'
 require 'notes/controller/crud_controller'
-require 'notes/controller/db_controller'
 
 require 'notes/utils/array_util'
 

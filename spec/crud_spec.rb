@@ -3,7 +3,7 @@ describe Notes::CRUDController do
     
     before do
       @crud_controller = Notes::CRUDController.new 'test'
-      @db_controller = Notes::DatabaseController.new 'test'
+      @db_manager = Notes::DatabaseManager.new 'test'
     end
 
     after do
@@ -13,7 +13,7 @@ describe Notes::CRUDController do
     it 'creates new note' do
       @crud_controller.perform_action({Notes::Options::ADD_NOTE => true})
       result_count = 0
-      @db_controller.get_all_records.each do |record|
+      @db_manager.get_all_records.each do |record|
         result_count += 1
       end
       result_count.should eq 1
@@ -23,7 +23,7 @@ describe Notes::CRUDController do
       @crud_controller.perform_action({Notes::Options::ADD_NOTE => true, Notes::Options::TAG => 'to do'})
       @crud_controller.perform_action({Notes::Options::REMOVE_NOTE => true, Notes::Options::TAG => 'to do'})
       result_count = 0
-      @db_controller.get_all_records.each do |record|
+      @db_manager.get_all_records.each do |record|
         result_count += 1
       end
       result_count.should eq 0
