@@ -40,4 +40,7 @@ Gem::Specification.new do |s|
                   'spec/export_spec.rb',
                   'spec/note_spec.rb',
                   'spec/options_spec.rb']
+  s.default_executable = 'bin/notes'
+  s.add_dependency 'trollop'
+  s.add_dependency 'mongo'
 end
