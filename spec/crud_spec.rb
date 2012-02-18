@@ -29,7 +29,7 @@ describe Notes::CRUDController do
       result_count.should eq 0
     end
 
-    it 'can find a note' do
+    it 'can find a note-console' do
       @crud_controller.perform_action({Notes::Options::ADD_NOTE => true})
       $stdout.should_receive (:puts)
       test_hash = {}
@@ -39,7 +39,7 @@ describe Notes::CRUDController do
       @crud_controller.perform_action test_hash
     end
 
-    it 'can find a note' do
+    it 'can find a note-html' do
       @crud_controller.perform_action({Notes::Options::ADD_NOTE => true})
       action_hash = {}
       action_hash[Notes::Options::FIND_NOTE] = true
@@ -50,7 +50,7 @@ describe Notes::CRUDController do
       File.delete './out'
     end
 
-    it 'can find a note' do
+    it 'can find a note-csv' do
       @crud_controller.perform_action({Notes::Options::ADD_NOTE => true})
       action_hash = {}
       action_hash[Notes::Options::FIND_NOTE] = true
