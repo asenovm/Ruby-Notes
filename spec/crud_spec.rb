@@ -38,5 +38,27 @@ describe Notes::CRUDController do
       test_hash[Notes::Options::CONSOLE_EXPORT] = true
       @crud_controller.perform_action test_hash
     end
+
+    it 'can find a note' do
+      @crud_controller.perform_action({Notes::Options::ADD_NOTE => true})
+      action_hash = {}
+      action_hash[Notes::Options::FIND_NOTE] = true
+      action_hash[Notes::Options::ALL] = true
+      action_hash[Notes::Options::HTML_EXPORT] = './out'
+      @crud_controller.perform_action action_hash
+      IO.read('./out').should_not be :empty
+      File.delete './out'
+    end
+
+    it 'can find a note' do
+      @crud_controller.perform_action({Notes::Options::ADD_NOTE => true})
+      action_hash = {}
+      action_hash[Notes::Options::FIND_NOTE] = true
+      action_hash[Notes::Options::ALL] = true
+      action_hash[Notes::Options::CSV_EXPORT] = './out'
+      @crud_controller.perform_action action_hash
+      IO.read('./out').should_not be :empty
+      File.delete './out'
+    end
   end
 end
