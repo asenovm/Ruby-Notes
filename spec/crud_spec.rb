@@ -28,5 +28,15 @@ describe Notes::CRUDController do
       end
       result_count.should eq 0
     end
+
+    it 'can find a note' do
+      @crud_controller.perform_action({Notes::Options::ADD_NOTE => true})
+      $stdout.should_receive (:puts)
+      test_hash = {}
+      test_hash[Notes::Options::FIND_NOTE] = true
+      test_hash[Notes::Options::ALL] = true
+      test_hash[Notes::Options::CONSOLE_EXPORT] = true
+      @crud_controller.perform_action test_hash
+    end
   end
 end
